@@ -96,7 +96,7 @@ const AdminLogin = ({ onLogin }) => {
 
         <div className="admin-login-footer">
           <p className="admin-login-hint">
-            Default credentials: admin@shop.com / admin123
+            
           </p>
         </div>
       </div>
