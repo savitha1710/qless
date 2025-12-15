@@ -1,0 +1,117 @@
+.dashboard-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.token-box {
+  margin: 20px auto;
+  padding: 20px;
+  background: #eee;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.token-number {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.next-btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+.admin-dash-container {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.manage-btn {
+  background: orange;
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.manage-btn:hover {
+  background: darkorange;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+
+.booking-table th {
+  background: #007bff;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: darkred;
+}
+.token-box-admin {
+  width: 260px;
+  background: #fff;
+  margin: 20px auto;
+  padding: 25px;
+  border: 2px solid green;
+  border-radius: 12px;
+}
+
+.token-number-admin {
+  font-size: 45px;
+  font-weight: bold;
+  color: green;
+}
+
+.token-actions {
+  margin-top: 20px;
+}
+
+.increment-btn {
+  background: green;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.increment-btn:hover {
+  background: darkgreen;
+}
+
+.reset-btn {
+  background: red;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: darkred;
+}

@@ -1,0 +1,327 @@
+/* BookSlot.css - Light Blue Theme */
+.bookslot-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a8d5e2 0%, #c8e3f0 50%, #e3f2f9 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft decorative floating circles */
+.bookslot-container::before {
+  content: '';
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(91, 155, 184, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -300px;
+  right: -300px;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSoft 15s ease-in-out infinite;
+}
+
+.bookslot-container::after {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(91, 155, 184, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -250px;
+  left: -250px;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSoft 18s ease-in-out infinite reverse;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -50px) scale(1.05); }
+}
+
+.bookslot-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bookslot-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+.bookslot-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ef9a9a;
+}
+
+.date-selector {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid #5b9bb8;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.date-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.date-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.9rem 1.2rem;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: #5b9bb8;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(91, 155, 184, 0.1);
+}
+
+.loading-text {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin: 2rem auto 1.5rem;
+  color: #2c3e50;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 2px solid #5b9bb8;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: #95a5a6;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #5b9bb8;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(91, 155, 184, 0.1);
+}
+
+.booking-summary {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  border: 2px solid #e0e0e0;
+}
+
+.booking-summary p {
+  color: #2c3e50;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.booking-summary strong {
+  color: #34495e;
+  font-weight: 700;
+}
+
+.booking-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #5b9bb8 0%, #4a7c92 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(91, 155, 184, 0.3);
+}
+
+.booking-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(91, 155, 184, 0.4);
+}
+
+.booking-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bookslot-container {
+    padding: 1rem;
+  }
+
+  .bookslot-title {
+    font-size: 2rem;
+  }
+
+  .date-selector,
+  .booking-form {
+    padding: 1.5rem;
+  }
+
+  .slots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* ============================================
+   SlotCard.css - Light Blue Theme
+   ============================================ */
+
+.slot-card {
+  background: white;
+  border: 2px solid #5b9bb8;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slot-card:hover:not(.slot-full) {
+  transform: translateY(-5px);
+  border-color: #4a7c92;
+  box-shadow: 0 6px 20px rgba(91, 155, 184, 0.3);
+}
+
+.slot-card.slot-selected {
+  background: linear-gradient(135deg, #5b9bb8 0%, #4a7c92 100%);
+  border-color: #4a7c92;
+  box-shadow: 0 6px 20px rgba(91, 155, 184, 0.4);
+}
+
+.slot-card.slot-selected .slot-time,
+.slot-card.slot-selected .slot-availability {
+  color: white;
+}
+
+.slot-card.slot-full {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+}
+
+.slot-time {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.slot-availability {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.slot-available {
+  color: #27ae60;
+  font-weight: 800;
+}
+
+.slot-full-text {
+  color: #e74c3c;
+  font-weight: 800;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slot-card {
+    padding: 1.25rem;
+  }
+
+  .slot-time {
+    font-size: 1.1rem;
+  }
+
+  .slot-availability {
+    font-size: 0.9rem;
+  }
+}
