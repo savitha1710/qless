@@ -1,65 +1,10 @@
-// // src/utils/api.js
-// import axios from 'axios';
-
-// const REACT_APP_API_BASE_URL = 'https://qless-backend-1.onrender.com';
-
-// const api = axios.create({
-//   baseURL: API_BASE_URL,
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });
-
-// // Add token to requests
-// api.interceptors.request.use(
-//   (config) => {
-//     const token = localStorage.getItem('token');
-//     if (token) {
-//       config.headers.Authorization = `Bearer ${token}`;
-//     }
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
-
-// // Auth APIs
-// export const authAPI = {
-//   register: (data) => api.post('/auth/register', data),
-//   login: (data) => api.post('/auth/login', data),
-//   getProfile: () => api.get('/auth/profile'),
-// };
-
-// // Booking APIs
-// export const bookingAPI = {
-//   getAvailableSlots: (date) => api.get(`/bookings/available-slots?date=${date}`),
-//   createBooking: (data) => api.post('/bookings', data),
-//   getMyBookings: () => api.get('/bookings/my-bookings'),
-//   cancelBooking: (id) => api.put(`/bookings/${id}/cancel`),
-// };
-
-// // Admin APIs
-// export const adminAPI = {
-//   login: (data) => api.post('/admin/login', data),
-//   getAllBookings: (date) => api.get(`/admin/bookings?date=${date}`),
-//   getCurrentToken: (date) => api.get(`/admin/current-token?date=${date}`),
-//   updateCurrentToken: (data) => api.put('/admin/current-token', data),
-//   updateBookingStatus: (id, status) => api.put(`/admin/bookings/${id}/status`, { status }),
-//   getDashboardStats: () => api.get('/admin/stats'),
-// };
-
-// export default api;
-
-
-
-
+// src/utils/api.js
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const REACT_APP_API_BASE_URL = 'https://qless-backend-2.onrender.com';
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: REACT_APP_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -74,20 +19,29 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    return Promise.reject(error);
+  }
 );
 
 // Auth APIs
+// export const authAPI = {
+//   register: (data) => api.post('/auth/register', data),
+//   login: (data) => api.post('/auth/login', data),
+//   getProfile: () => api.get('/auth/profile'),
+// };
+
 export const authAPI = {
-  register: (data) => api.post('/auth/register', data),
-  login: (data) => api.post('/auth/login', data),
-  getProfile: () => api.get('/auth/profile'),
+  register: (data) => api.post('/api/auth/register', data),
+  login: (data) => api.post('/api/auth/login', data),
+  getProfile: () => api.get('/api/auth/profile'),
 };
+
+
 
 // Booking APIs
 export const bookingAPI = {
-  getAvailableSlots: (date) =>
-    api.get(`/bookings/available-slots?date=${date}`),
+  getAvailableSlots: (date) => api.get(`/bookings/available-slots?date=${date}`),
   createBooking: (data) => api.post('/bookings', data),
   getMyBookings: () => api.get('/bookings/my-bookings'),
   cancelBooking: (id) => api.put(`/bookings/${id}/cancel`),
@@ -96,16 +50,11 @@ export const bookingAPI = {
 // Admin APIs
 export const adminAPI = {
   login: (data) => api.post('/admin/login', data),
-  getAllBookings: (date) =>
-    api.get(`/admin/bookings?date=${date}`),
-  getCurrentToken: (date) =>
-    api.get(`/admin/current-token?date=${date}`),
-  updateCurrentToken: (data) =>
-    api.put('/admin/current-token', data),
-  updateBookingStatus: (id, status) =>
-    api.put(`/admin/bookings/${id}/status`, { status }),
+  getAllBookings: (date) => api.get(`/admin/bookings?date=${date}`),
+  getCurrentToken: (date) => api.get(`/admin/current-token?date=${date}`),
+  updateCurrentToken: (data) => api.put('/admin/current-token', data),
+  updateBookingStatus: (id, status) => api.put(`/admin/bookings/${id}/status`, { status }),
   getDashboardStats: () => api.get('/admin/stats'),
 };
 
 export default api;
-
