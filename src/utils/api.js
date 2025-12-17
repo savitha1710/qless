@@ -1,7 +1,7 @@
 // src/utils/api.js
 import axios from 'axios';
 
-const API_BASE_URL = 'https://qless-backend-1.onrender.com';
+const REACT_APP_API_BASE_URL = 'https://qless-backend-1.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
